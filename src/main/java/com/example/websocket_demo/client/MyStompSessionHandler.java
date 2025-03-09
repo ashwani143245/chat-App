@@ -31,9 +31,9 @@ public class MyStompSessionHandler extends StompSessionHandlerAdapter {
 
     }
 
-    @Override
-    public void handleTransportError(StompSession session,Throwable exception){
-        exception.printStackTrace();
-    }
+//    @Override
+//    public void handleTransportError(StompSession session,Throwable exception){
+//        exception.printStackTrace();
+//    }
 
 }
