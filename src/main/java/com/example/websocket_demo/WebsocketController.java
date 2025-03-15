@@ -13,6 +13,9 @@ public class WebsocketController {
     public WebsocketController(SimpMessagingTemplate messagingTemplate){
         this.messagingTemplate = messagingTemplate;
     }
+
+
+
     @MessageMapping("/message")
     public void handleMessage(Message message){
         System.out.println("Received message from user: "+ message.getUser()+ ": "+message.getMessage());
