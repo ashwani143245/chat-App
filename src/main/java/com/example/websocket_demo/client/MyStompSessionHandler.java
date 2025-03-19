@@ -1,12 +1,13 @@
 package com.example.websocket_demo.client;
 
-import org.springframework.messaging.Message;
+import com.example.websocket_demo.Message;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
 import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class MyStompSessionHandler extends StompSessionHandlerAdapter {
     private  String username;
@@ -27,8 +28,8 @@ public class MyStompSessionHandler extends StompSessionHandlerAdapter {
             public void handleFrame(StompHeaders headers,Object payload){
                 try{
                     if (payload instanceof Message){
-                        Message mesaage = (Message) payload;
-                        System.out.println("Received Message: "+message.getUser()+":"+message.getMessages());
+                        Message message = (Message) payload;
+                        System.out.println("Received Message:"+message.getUser()+":"+message.getMessage());
                     }else{
                         System.out.println("Received Unexpected payload type: " + payload.getClass());
                     }
