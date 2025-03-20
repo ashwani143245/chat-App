@@ -1,14 +1,14 @@
-package com.example.websocket_demo.client;
-
+package com.example.websocket_demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 
 @Service
 public class WebSocketSessionManager {
+
     private final ArrayList<String> activeUsernames =new ArrayList<>();
     private final SimpMessagingTemplate messagingTemplate;
 
@@ -29,5 +29,4 @@ public class WebSocketSessionManager {
     }
 
 }
-
 
