@@ -4,8 +4,8 @@ import com.example.websocket_demo.Message;
 
 import java.util.ArrayList;
 
-public class MessageListener {
+public interface MessageListener {
 
-    void onMessageRecieve(Message message);
-    void onActiveUsersUpdated(ArrayList<String> users);
+    abstract void onMessageRecieve(Message message);
+    abstract void onActiveUsersUpdated(ArrayList<String> users);
 }

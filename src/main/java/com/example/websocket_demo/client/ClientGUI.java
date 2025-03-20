@@ -1,7 +1,7 @@
 package com.example.websocket_demo.client;
 
 import com.example.websocket_demo.Message;
-import jdk.jshell.execution.Util;
+
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
 public class ClientGUI extends JFrame implements MessageListener{
     private JPanel connectedUsersPanel, messagePanel;
     private MyStompClient myStompClient;
-    private String username;
+    private  String username;
     private JScrollPane messagePanelScrollPane;
 
     public ClientGUI(String username) throws ExecutionException, InterruptedException {
@@ -186,10 +186,8 @@ public class ClientGUI extends JFrame implements MessageListener{
     private void updateMessageSize(){
         for(int i = 0; i < messagePanel.getComponents().length; i++){
             Component component = messagePanel.getComponent(i);
-            if(component instanceof JPanel){
-                JPanel chatMessage = (JPanel) component;
-                if(chatMessage.getComponent(1) instanceof JLabel){
-                    JLabel messageLabel = (JLabel) chatMessage.getComponent(1);
+            if(component instanceof JPanel chatMessage){
+                if(chatMessage.getComponent(1) instanceof JLabel messageLabel){
                     messageLabel.setText("<html>" +
                             "<body style='width:" + (0.60 * getWidth()) + "'px>" +
                             messageLabel.getText() +
